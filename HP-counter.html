@@ -26,7 +26,17 @@
       padding: 10px;
       font-size: 16px;
       margin: 10px;
-      width: 200px;
+      width: 150px;
+      text-align: center;
+    }
+    input[type="title"], input[type="text"] {
+      background-color: #121212;
+      color: #ffffff;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 20px;
+      margin: 10px;
+      width: 150px;
       text-align: center;
     }
 
@@ -41,16 +51,16 @@
 
   <div class="container">
     <!-- Editable label -->
-    <input type="text" id="labelInput" value="Character you want to track">
+    <input type="title" id="labelInput" value="Character you want to track">
 
     <!-- Add number -->
-    <input type="number" id="addInput" placeholder="Healing received">
+    <input type="number" id="addInput" placeholder="Healing">
 
     <!-- Main number -->
     <input type="number" id="mainNumber" value="0">
 
     <!-- Subtract number -->
-    <input type="number" id="subtractInput" placeholder="Damage taken">
+    <input type="number" id="subtractInput" placeholder="Damage">
   </div>
 
   <script>
