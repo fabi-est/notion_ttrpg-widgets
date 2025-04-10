@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Adjust Widget</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #1e1e1e;
+      color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background: #2c2c2c;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+    input[type="number"] {
+      width: 100px;
+      padding: 5px;
+      font-size: 16px;
+      text-align: center;
+      background-color: #3a3a3a;
+      color: #ffffff;
+      border: 1px solid #555;
+      border-radius: 5px;
+    }
+    input[type="number"]::placeholder {
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="number" id="addBox" placeholder="Add" oninput="updateFromAdd()">
+    <input type="number" id="mainBox" placeholder="Main" value="0">
+    <input type="number" id="subBox" placeholder="Subtract" oninput="updateFromSub()">
+  </div>
+
+  <script>
+    function updateFromAdd() {
+      const mainBox = document.getElementById('mainBox');
+      const addBox = document.getElementById('addBox');
+      if (addBox.value !== '') {
+        mainBox.value = parseFloat(mainBox.value) + parseFloat(addBox.value);
+        addBox.value = '';
+      }
+    }
+
+    function updateFromSub() {
+      const mainBox = document.getElementById('mainBox');
+      const subBox = document.getElementById('subBox');
+      if (subBox.value !== '') {
+        mainBox.value = parseFloat(mainBox.value) - parseFloat(subBox.value);
+        subBox.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
